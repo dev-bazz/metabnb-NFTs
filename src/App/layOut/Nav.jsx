@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import Icons from "../../assets/icons/Icons";
 
 export default function Nav({ handleModal }) {
@@ -10,13 +10,13 @@ export default function Nav({ handleModal }) {
                         <div className="container--global nav-container">
                                 <Icons name='brand' className='nav__logo' />
                                 <div className={clicked ? `nav-main active` : `nav-main `}>
-                                        <Icons name={`mobile-close`} change={setClicked}  /> 
+                                        {/* <Icons name={`mobile-close`} change={setClicked}  /> 
                                         <ul className="nav-link__list" onClick={()=> setClicked(false)} >
                                                 <li><NavLink to={'/'}>Home </NavLink>  </li>
                                                 <li><NavLink to={'NFTs'}>Place to Stay </NavLink>  </li>
                                                 <li><NavLink to={'NFTs'}>NFTs </NavLink>  </li>
                                                 <li><NavLink to={'/'}>Community </NavLink>  </li>
-                                        </ul>
+                                        </ul> */}
                                         <button className="btn" onClick={() => {
                                                 setClicked(false)
                                                 handleModal()}}> Connect Wallet</button>
