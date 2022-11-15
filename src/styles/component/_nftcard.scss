@@ -1,0 +1,54 @@
+@use "../utilities" as *;
+
+.NFT {
+        width: min(100%, pix-rem(292px));
+        border: 1px solid map-get($colors, "grey");
+        border-radius: pix-rem(14px);
+        padding: pix-rem(16px);
+        &__card {
+                background-color: map-get($colors, "white");
+                .img--container {
+                        position: relative;
+                        & > *:nth-child(1) {
+                                position: absolute;
+                                top: pix-rem(8px);
+                                right: pix-rem(8px);
+                                font-size: pix-rem(24px);
+                        }
+                }
+                .title {
+                        margin-top: pix-rem(16px);
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: pix-rem(12.5px);
+                        & > *:nth-child(2) {
+                                font-weight: bold;
+                        }
+                }
+                .da {
+                        margin-top: pix-rem(10px);
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: pix-rem(12.5px);
+                }
+
+                .rating {
+                        margin-top: pix-rem(10px);
+                        display: flex;
+                        gap: pix-rem(8px);
+                }
+        }
+}
+
+.heart {
+        fill: #d7d7d7;
+        cursor: pointer;
+        &:hover{
+                fill: white;
+                transition: fill .2s ease-in-out;
+        }
+        &--checked {
+                fill: lighten(map-get($colors, "major"), $amount: 30);
+                cursor: pointer;
+        }
+}

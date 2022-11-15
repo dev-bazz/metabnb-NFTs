@@ -1,0 +1,17 @@
+@use '../utilities' as *;
+
+.btn {
+        all: unset;
+        background-color: map-get($colors, 'major');
+        color: map-get($colors, 'white');
+        padding:  pix-rem(14px) pix-rem(26px);
+        border-radius: pix-rem(10px, rem);
+        cursor: pointer;
+        &:active{
+                background-color: darken( map-get($colors, 'major'), $amount: 10);
+        }
+        &:hover{
+                transition: background-color .2s ease-in-out;
+                background-color: lighten( map-get($colors, 'major'), $amount: 10);
+        }
+}

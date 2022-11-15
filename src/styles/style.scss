@@ -1,0 +1,65 @@
+@use "./reset";
+@use "./utilities" as *;
+
+@use "./component/all-components";
+@use "./layout/allLayout";
+@use "./pages/pages";
+@use "./media";
+
+:root {
+        font-family: map-get($font, "fontFamily"), cursive;
+        line-height: 24px;
+        font-weight: 400;
+
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+}
+body {
+        background-color: map-get($colors, "white");
+        &::-webkit-scrollbar {
+                display: none;
+        }
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-moz-selection {
+                background-color: map-get($colors, "major") !important;
+                color: white !important;
+        }
+        &::selection {
+                background-color: map-get($colors, "major") !important;
+                color: white !important;
+        }
+}
+
+
+
+@media (max-width: 991.98px){
+        :root{
+                font-size:14px
+        }
+}
+
+@media (max-width: 767.98px){
+        :root{
+                font-size: 12px;
+        }
+}
+@media (max-width: 367.98px){
+        :root{
+                font-size: 8px;
+        }
+}
+@media (max-width: 160.98px){
+        :root{
+                font-size: 4px;
+        }
+}
+
+@media (max-width: 100.98px){
+        :root{
+                font-size: 2px;
+        }
+}

@@ -1,0 +1,13 @@
+@use "../utilities" as *;
+
+$container: (
+        "global": 1256px,
+);
+
+.container {
+        &--global {
+                width: min(100%, pix-rem(map-get($container, "global"),rem) );
+                margin-inline: auto;
+                padding-inline: pix-rem(16px);
+        }
+}

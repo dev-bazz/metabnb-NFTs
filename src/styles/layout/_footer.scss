@@ -1,0 +1,83 @@
+@use "../utilities" as *;
+
+.footer {
+        color: map-get($colors, "white");
+        background-color: map-get($colors, "black");
+        padding-block: pix-rem(58px);
+        // margin-top: pix-rem(92px);
+
+        &--wrapper {
+                display: flex;
+                gap: pix-rem(186px);
+                align-items: first baseline;
+                flex-wrap: wrap-reverse;
+        }
+
+        &-group:nth-child(1) {
+                display: flex;
+                flex-direction: column;
+                @include media-query(710px) {
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        .lower {
+                                display: flex;
+                                gap: pix-rem(20px);
+                                align-items: center;
+                        }
+                }
+                @include media-query(510px) {
+                        flex-direction: column;
+                        .lower {
+                                padding-block: pix-rem(30px);
+                        }
+                }
+
+                & > * {
+                        &:nth-child(2) {
+                                @include media-query(710px) {
+                                        flex-direction: row;
+                                        margin-top: 0;
+                                        justify-content: space-between;
+                                }
+                                margin-top: pix-rem(96px);
+                                .social {
+                                        display: flex;
+                                        gap: pix-rem(32px);
+                                }
+                                & > *:nth-child(2) {
+                                        margin-top: pix-rem(56px);
+                                        @include media-query(710px) {
+                                                flex-direction: row;
+                                                margin-top: 0;
+                                                justify-content: space-between;
+                                        }
+                                }
+                        }
+                }
+        }
+        &-group:nth-child(2) {
+                display: flex;
+                flex-wrap: wrap;
+                gap: pix-rem(216px);
+
+                @include media-query(456px){
+                        flex-direction: column;
+                        margin-inline: auto;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                }
+                h6 {
+                        font-size: pix-rem(18px);
+                        font-weight: bold;
+                }
+                li {
+                        color: #f1f3f9;
+                        font-size: pix-rem(14px);
+                }
+                li + li {
+                        margin-top: pix-rem(16px);
+                }
+        }
+}

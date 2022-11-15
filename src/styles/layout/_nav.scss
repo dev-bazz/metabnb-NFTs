@@ -1,0 +1,86 @@
+@use "../utilities" as *;
+.nav {
+        margin-top: pix-rem(44px);
+        background-color: map-get($colors, "white");
+        &-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+        }
+        &-main {
+                
+                display: flex;
+                justify-content: space-between;
+                width: 70%;
+                align-items: center;
+                
+                align-items: center;
+                top: 0;
+                z-index: 10;
+                inset-block: 0;
+                right: 0;
+                & > svg {
+                                display: none;
+                        }
+                @include media-query(900px){
+                        translate: 364px 0;
+                        display: none;
+                }
+        }
+
+        &-main.active {
+                
+                @include media-query(900px) {
+                        
+                        display: flex;
+                        position: fixed;
+                        flex-direction: column;
+                        background-color: rgb(247, 247, 247);
+                        justify-content: flex-start;
+                        align-items: center;
+                        top: 0;
+                        z-index: 10;
+                        inset-block: 0;
+                        right: 0;
+                        width: 100vw;
+                        padding-top: pix-rem(100px);
+                        translate: 0 0;
+                        transition: translate 0.3s ease-in-out;
+                        & > svg {
+                                display: inline;
+                                position: absolute;
+                                top: pix-rem(24px);
+                                right: pix-rem(24px);
+                        }
+                        .btn {
+                                margin-top: pix-rem(44px, em);
+                        }
+                }
+        }
+        .nav-link__list {
+                display: flex;
+                margin-block: 0;
+                gap: pix-rem(48px);
+
+                @include media-query(900px) {
+                        flex-direction: column;
+                }
+
+                li {
+                        font-size: pix-rem(20px, rem);
+                        a {
+                                color: map-get($colors, "text-black");
+                                &:active {
+                                        color: map-get($colors, "major");
+                                }
+                        }
+                }
+        }
+        .mobile {
+                display: none;
+                @include media-query(900px) {
+                        display: block;
+                }
+        }
+}

@@ -1,0 +1,48 @@
+@use "../utilities" as *;
+.nft-page {
+        margin-bottom: pix-rem(90px);
+        .nav-list {
+                display: flex;
+                justify-content: space-between;
+                width: min(100%, pix-rem(921px));
+                @include media-query(1120px){
+                        display: none;
+                }
+        }
+
+        .top {
+                display: flex;
+                justify-content: space-between;
+                margin-top: pix-rem(120px);
+                align-items: center;
+
+                .location {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: min(100%, pix-rem(161px));
+                        cursor: pointer;
+                        border: 1px solid map-get($colors, "grey");
+                        border-radius: pix-rem(8px);
+                        padding: pix-rem(14px);
+                        &-list{
+                                display: none;
+                                @include media-query(1120px){
+                                        display: inline;
+                                }
+                                background-color: white;
+                                margin-right: pix-rem(24px);
+                                margin-left: auto;
+                                &> * {
+                                        font-family: map-get($font, 'fontFamily' );
+                                }
+                        }
+                }
+        }
+        .nft-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(pix-rem(292px), 1fr));
+                gap: pix-rem(16px);
+                place-items: center;
+        }
+}

@@ -1,0 +1,70 @@
+@use "../utilities" as *;
+
+.modal {
+        background-color: map-get($colors, "very-light-grey");
+        width: min(100%, pix-rem(600px));
+        border: 0;
+        border-radius: pix-rem(16px);
+        padding: 0;
+
+        &__body {
+                padding: pix-rem(32px);
+                & > * + * {
+                        margin-top: pix-rem(16px);
+                }
+        }
+
+        &__header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-inline: pix-rem(32px);
+                padding-block: pix-rem(24px);
+                border-bottom: pix-rem(2px) solid map-get($colors, "light-grey");
+
+                .close {
+                        font-size: pix-rem(24px);
+                        cursor: pointer;
+                        aspect-ratio: 1/1;
+                        width: min(100%, pix-rem(24px));
+                        display: grid;
+                        place-items: center;
+                        &:hover {
+                                animation: rotate 0.4s ease-out;
+                        }
+                }
+        }
+}
+
+.link-btn {
+        width: min(100%, pix-rem(536px));
+        margin-inline: auto;
+        padding: pix-rem(12px) pix-rem(20px);
+        border: pix-rem(2px) solid map-get($colors, "light-grey");
+        border-radius: pix-rem(12px);
+        background-color: map-get($colors, "very-light-grey");
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+                background-color: darken(map-get($colors, "very-light-grey"), 5);
+                cursor: pointer;
+        }
+
+        p {
+                font-weight: 600;
+                font-size: pix-rem(18px);
+        }
+
+        .link-title {
+                display: flex;
+                align-items: center;
+                gap: pix-rem(16px);
+        }
+}
+
+@keyframes rotate {
+        to {
+                rotate: 180deg;
+        }
+}
