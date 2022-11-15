@@ -11,7 +11,7 @@ export default function Nav({ handleModal }) {
                                 <Icons name='brand' className='nav__logo' />
                                 <div className={clicked ? `nav-main active` : `nav-main `}>
                                         <Icons name={`mobile-close`} change={setClicked} />
-                                        <ul className="nav-link__list"  >
+                                        <ul className="nav-link__list" onClick={()=> setClicked(false)}  >
                                                 <li><NavLink to='/'>Home </NavLink>  </li>
                                                 <li><NavLink to='NFTs'>Place to Stay </NavLink>  </li>
                                                 <li><NavLink to='NFTs'>NFTs </NavLink>  </li>
