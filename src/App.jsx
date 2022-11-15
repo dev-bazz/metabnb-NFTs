@@ -16,17 +16,17 @@ function App() {
 
   const modal = useRef();
   function handleModal() {
-    DOMMethods.showModal(modal.current)
+    modal.current.showModal()
   }
   function handleClose() {
-    DOMMethods.closeModal(modal.current)
+    modal.current.close()
   }
 
   return (
     <>
       <Router>
 
-        <Nav />
+        <Nav handleModal={handleModal} />
 
         <Routes >
 
@@ -34,19 +34,9 @@ function App() {
           <Route path='NFTs' element={<Nft />} />
 
         </Routes>
-        {/* <Dialog modal={modal} >
-          <div className="modal__header">
-            <h3>Connect Wallet</h3>
-            <div className="close" onClick={() => handleClose()}>
-              <Icons name={`cross`} />
-            </div>
-          </div>
-          <div className="modal__body">
-            <p>Choose your preferred wallet:</p>
-            <LinkBTN name={`meta-fox`} text={`Metamask`} />
-            <LinkBTN name={`wallet`} text={`WalletConnect`} />
-          </div>
-        </Dialog> */}
+
+        <Dialog modal={modal} handleClose={handleClose} /> 
+        
         <Footer />
 
       </Router>
